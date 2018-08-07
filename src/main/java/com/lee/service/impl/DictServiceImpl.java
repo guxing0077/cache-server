@@ -19,20 +19,22 @@ public class DictServiceImpl implements DictService {
 
     @Override
     @CachePut(value = "dict", key = "'dict_'+#dictReq.id")
-    public void add(DictReq dictReq) {
+    public Dict add(DictReq dictReq) {
         System.out.println("为id、key为:" + dictReq.getId() + "数据做了缓存");
         Dict dict = new Dict();
         BeanUtils.copyProperties(dictReq, dict);
         dictMapper.insert(dict);
+        return dict;
     }
 
     @Override
     @CachePut(value = "dict", key = "'dict_'+#dictReq.id")
-    public void update(DictReq dictReq) {
+    public Dict update(DictReq dictReq) {
         System.out.println("为id、key为:" + dictReq.getId() + "数据做了缓存");
         Dict dict = new Dict();
         BeanUtils.copyProperties(dictReq, dict);
         dictMapper.updateById(dict);
+        return dict;
     }
 
     @Override

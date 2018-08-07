@@ -5,9 +5,9 @@ import com.lee.req.dict.DictReq;
 
 public interface DictService {
 
-    void add(DictReq dictReq);
+    Dict add(DictReq dictReq);
 
-    void update(DictReq dictReq);
+    Dict update(DictReq dictReq);
 
     Dict findById(Integer id);
 
