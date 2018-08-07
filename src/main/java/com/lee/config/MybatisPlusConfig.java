@@ -16,7 +16,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
-import java.util.Properties;
 
 /**
  * mybatis config
@@ -68,7 +67,7 @@ public class MybatisPlusConfig {
         mybatisSqlSessionFactoryBean.setTypeAliasesPackage(TYPE_ALIASES_PACKAGE);
         //支持分页插件
         mybatisSqlSessionFactoryBean.setPlugins(new Interceptor[]{
-                performanceInterceptor()
+//                performanceInterceptor()
         });
         // 配置mapper的扫描，找到所有的mapper.xml映射文件
         Resource[] resources = new PathMatchingResourcePatternResolver()
